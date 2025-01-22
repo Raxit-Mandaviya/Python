@@ -22,10 +22,11 @@ print(person["name"])  # Accessing dictionary value
 print(person["age"])  # Accessing dictionary value
 
 # 5. Conditional Statements
-if x > 5:
-    print("x is greater than 5")
+age = 20
+if age > 18:
+    print("you are an adult.")
 else:
-    print("x is not greater than 5")
+    print("you are a minor.")
 
 # 6. Loops
 # For loop
