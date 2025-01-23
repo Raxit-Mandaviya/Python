@@ -41,11 +41,11 @@ class Vehical: # Parent class
     def speak(self):
         return f"{self.name} makes a sound."
 
-class Bike(Vehical): # Child class inheriting from Animal
+class Bike(Vehical): # Child class inheriting from Vehical
     def speak(self):
         return f"{self.name} sounds Wroom Wroom!"
 
-class Car(Vehical): # Another child class inheriting from Animal
+class Car(Vehical): # Another child class inheriting from Vehical
     def speak(self):
         return f"{self.name} sounds Wroooooooom!"
 
@@ -105,3 +105,58 @@ print(account.get_balance())
 account.deposit(500)
 account.withdraw(300)
 print(account.get_balance())
+
+
+# Polymorphism
+
+class Dog:
+    def speak(self):
+        return "Dog barks!"
+
+class Cat:
+    def speak(self):
+        return "Cat Meows!"
+
+class Cow:
+    def speak(self):
+        return "Cow Moos!"
+
+animals = [Dog(), Cat(), Cow()]  # Makes instances of all classes
+
+for animal in animals:
+    print(animal.speak())  # Calls only one speak() method to return all classes
+
+# Method Overriding
+
+class Animal:
+    def speak(self):
+        return "Animal speaks!"
+    
+class Dog(Animal):
+    def speak(self):
+        return "Dog barks!"
+    
+class Cat(Animal):
+    def speak(self):
+        return "Cat meows!"
+    
+class Cow(Animal):
+    def speak(self):
+        return "Cow moos!"
+    
+animals = [Dog(), Cat(), Cow()]
+
+for animal in animals:
+    print(animal.speak())
+
+# Method Overloading
+
+class Calculator:
+    def add(self, a, b, c=None):
+        if c:
+            return a + b + c
+        else:
+            return a + b
+        
+calculator = Calculator()
+print(calculator.add(2, 2))
